@@ -1,0 +1,41 @@
+OBJECT Page 50052 PageOcupacions
+{
+  OBJECT-PROPERTIES
+  {
+    Date=05/05/23;
+    Time=17:24:22;
+    Modified=Yes;
+    Version List=;
+  }
+  PROPERTIES
+  {
+    SourceTable=Table50044;
+    PageType=List;
+  }
+  CONTROLS
+  {
+    { 1106000000;0;Container;
+                ContainerType=ContentArea }
+
+    { 1106000001;1;Group  ;
+                Name=Group;
+                GroupType=Repeater }
+
+    { 1106000002;2;Field  ;
+                SourceExpr=cid }
+
+    { 1106000003;2;Field  ;
+                SourceExpr=name }
+
+    { 1106000004;2;Field  ;
+                SourceExpr=cicle }
+
+  }
+  CODE
+  {
+
+    BEGIN
+    END.
+  }
+}
+

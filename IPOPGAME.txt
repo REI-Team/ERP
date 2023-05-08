@@ -1,0 +1,84 @@
+OBJECT Codeunit 50060 ipopGame
+{
+  OBJECT-PROPERTIES
+  {
+    Date=05/05/23;
+    Time=17:07:17;
+    Modified=Yes;
+    Version List=;
+  }
+  PROPERTIES
+  {
+    OnRun=BEGIN
+            EVALUATE(Menu, Window.InputBox('Insereix un numero del 1.Insereix, 2.Modificar, 3.Eliminar, 4.Sortir.', 'Men£ Opcions','',100,100));
+            CASE Menu OF
+              '1':
+                BEGIN
+                  EVALUATE(Menu2, Window.InputBox('Insereix id', 'Men£ Opcions','',100,100));
+                  Menu3 := Window.InputBox('Insereix nom cicle', 'Men£ Opcions','',100,100);
+                  EVALUATE(Menu4, Window.InputBox('Insereix nom familia', 'Men£ Opcions','',100,100));
+
+                  Cicle.id := Menu2;
+                  Cicle.name := Menu3;
+                  Cicle.id_familia := Menu4;
+                  Cicle.INSERT;
+
+                  MeuDialeg.OPEN('Insert Taula Cicles\id Cicles #1######\name Cicles #2######\id_familia Cicles #3######');
+                  MeuDialeg.UPDATE(1, Cicle.id);
+                  MeuDialeg.UPDATE(2, Cicle.name);
+                  MeuDialeg.UPDATE(3, Cicle.id_familia);
+                  Cicle.INIT;
+                  SLEEP(1000);
+
+                END;
+
+              '2':
+                BEGIN
+                 EVALUATE(Menu2, Window.InputBox('Insereix id del cicle que vols modificar', 'Men£ Opcions','',100,100));
+                 Menu3 := Window.InputBox('Insereix nom cicle', 'Men£ Opcions','',100,100);
+                 WITH Cicle DO BEGIN
+                    GET(Menu2);
+                    MeuDialeg.UPDATE(1,Menu3);
+                    SLEEP(1000);
+                      IF MODIFY THEN
+                        MeuDialeg.UPDATE(2,Menu3);
+                      SLEEP(2000);
+                      COMMIT;
+                  END;
+                  MeuDialeg.OPEN('Tabla Cicles modificada');
+                  SLEEP(1000);
+                END;
+
+              '3':
+                 BEGIN
+                  EVALUATE(Menu2, Window.InputBox('Insereix id del cicle que vols eliminar', 'Men£ Opcions','',100,100));
+                  MeuDialeg.OPEN('L¡nia esborrada');
+                  WITH Cicle DO BEGIN
+                    GET(Menu2);
+                    Cicle.DELETE;
+                    SLEEP(2000);
+                  END;
+                END;
+
+              '4':
+               EXIT;
+            END;
+          END;
+
+  }
+  CODE
+  {
+    VAR
+      Window@1106000002 : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.Interaction" RUNONCLIENT;
+      Menu@1106000001 : Text;
+      MeuDialeg@1106000000 : Dialog;
+      Menu2@1106000003 : Integer;
+      Menu3@1106000004 : Text;
+      Menu4@1106000005 : Integer;
+      Cicle@1106000006 : Record 50043;
+
+    BEGIN
+    END.
+  }
+}
+

@@ -1,0 +1,33 @@
+OBJECT Table 50043 Cicles
+{
+  OBJECT-PROPERTIES
+  {
+    Date=05/05/23;
+    Time=16:09:32;
+    Modified=Yes;
+    Version List=;
+  }
+  PROPERTIES
+  {
+  }
+  FIELDS
+  {
+    { 1   ;   ;id                  ;Integer        }
+    { 2   ;   ;name                ;Text100        }
+    { 3   ;   ;id_familia          ;Integer       ;TableRelation=Familia.id }
+  }
+  KEYS
+  {
+    {    ;id                                      ;Clustered=Yes }
+  }
+  FIELDGROUPS
+  {
+  }
+  CODE
+  {
+
+    BEGIN
+    END.
+  }
+}
+

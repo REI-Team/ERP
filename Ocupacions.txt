@@ -1,0 +1,33 @@
+OBJECT Table 50044 Ocupacions
+{
+  OBJECT-PROPERTIES
+  {
+    Date=05/05/23;
+    Time=16:11:59;
+    Modified=Yes;
+    Version List=;
+  }
+  PROPERTIES
+  {
+  }
+  FIELDS
+  {
+    { 1   ;   ;cid                 ;Integer        }
+    { 2   ;   ;name                ;Text100        }
+    { 3   ;   ;cicle               ;Integer       ;TableRelation=Cicles.id }
+  }
+  KEYS
+  {
+    {    ;cid                                     ;Clustered=Yes }
+  }
+  FIELDGROUPS
+  {
+  }
+  CODE
+  {
+
+    BEGIN
+    END.
+  }
+}
+

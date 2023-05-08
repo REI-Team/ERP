@@ -1,0 +1,49 @@
+OBJECT Page 50050 PageFamilia
+{
+  OBJECT-PROPERTIES
+  {
+    Date=05/05/23;
+    Time=17:28:59;
+    Modified=Yes;
+    Version List=;
+  }
+  PROPERTIES
+  {
+    SourceTable=Table50042;
+    PageType=List;
+    ActionList=ACTIONS
+    {
+      { 1106000004;  ;ActionContainer;
+                      Name=nada;
+                      ActionContainerType=NewDocumentItems }
+      { 1106000005;1 ;ActionGroup }
+      { 1106000006;2 ;Action    ;
+                      Name=CiclesFamilia;
+                      RunObject=Page 50051;
+                      RunPageLink=id_familia=FIELD(id) }
+    }
+  }
+  CONTROLS
+  {
+    { 1106000000;0;Container;
+                ContainerType=ContentArea }
+
+    { 1106000001;1;Group  ;
+                Name=Group;
+                GroupType=Repeater }
+
+    { 1106000002;2;Field  ;
+                SourceExpr=id }
+
+    { 1106000003;2;Field  ;
+                SourceExpr=name }
+
+  }
+  CODE
+  {
+
+    BEGIN
+    END.
+  }
+}
+

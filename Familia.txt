@@ -1,0 +1,32 @@
+OBJECT Table 50042 Familia
+{
+  OBJECT-PROPERTIES
+  {
+    Date=05/05/23;
+    Time=16:05:27;
+    Modified=Yes;
+    Version List=;
+  }
+  PROPERTIES
+  {
+  }
+  FIELDS
+  {
+    { 1   ;   ;id                  ;Integer        }
+    { 2   ;   ;name                ;Text100        }
+  }
+  KEYS
+  {
+    {    ;id                                      ;Clustered=Yes }
+  }
+  FIELDGROUPS
+  {
+  }
+  CODE
+  {
+
+    BEGIN
+    END.
+  }
+}
+

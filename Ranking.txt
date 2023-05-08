@@ -1,0 +1,39 @@
+OBJECT Table 50045 Ranking
+{
+  OBJECT-PROPERTIES
+  {
+    Date=05/05/23;
+    Time=16:14:55;
+    Modified=Yes;
+    Version List=;
+  }
+  PROPERTIES
+  {
+  }
+  FIELDS
+  {
+    { 1   ;   ;id                  ;Integer        }
+    { 2   ;   ;name                ;Text100        }
+    { 3   ;   ;cicle               ;Integer       ;TableRelation=Cicles.id }
+    { 4   ;   ;score               ;Integer        }
+    { 5   ;   ;time                ;Integer        }
+    { 6   ;   ;errors              ;Integer        }
+    { 7   ;   ;success             ;Integer        }
+    { 8   ;   ;visible             ;Integer        }
+    { 9   ;   ;ip                  ;Text100        }
+  }
+  KEYS
+  {
+    {    ;id                                      ;Clustered=Yes }
+  }
+  FIELDGROUPS
+  {
+  }
+  CODE
+  {
+
+    BEGIN
+    END.
+  }
+}
+
